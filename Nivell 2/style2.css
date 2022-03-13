@@ -1,0 +1,251 @@
+*{
+    box-sizing: border-box;
+}
+/*DESKTOP VERSION*/
+html, body {
+    max-width: 1200px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1em;
+    margin: 0 1.5em 0 1.5em;
+}
+/* Cabecera separada en dos partes: logo + menú (opciones + redes sociales) en la superior y banner en la inferior*/
+header{
+    margin-bottom: 0.5em;
+    display: flex;
+    flex-direction: column;
+    background-image: url("../Nivell 2/images/header (4).jpg");
+    /*En caso de que la imagen no aparezca ponemos color de fondo*/
+    background-color: rgb(240, 238, 238);    
+}  
+header .top, header .bottom {
+    display: flex;
+    padding: 0.6em;
+}
+/*Parte superior : logo + menu (opciones + redes sociales)*/
+header .top .logo{
+    flex-grow: 1;
+    margin-right: 2em;
+}
+header .top .logo img{
+    width: 5em;
+} 
+header .top .menu{
+    display: flex;
+    flex-grow: 4;
+    width: 100%;
+}
+/* Para poner en fila el menú de opciones y las redes sociales*/
+header .top .menu .options, header .top .menu .socialMedia{
+    display: flex;  
+    align-items: center;   
+}
+header .top .menu .options{
+    flex-grow: 10;
+    justify-content: space-around;
+}
+header .top .menu .socialMedia{
+    flex-grow: 1;
+    justify-content: flex-end;
+    gap: 0.7em;  
+    margin-right: 1em;
+}
+/* Dar formato a los enlaces de icono o texto de la cabecera (top): quitarle el subrayado, cambiar el color a gris, separar iconos de texto y alinear iconos a la altura de la base del texto */
+header .top .menu a{
+    display: flex;
+    color: rgb(128, 128, 128);
+    gap: 0.5em;
+    align-items: baseline;
+    text-decoration: initial;
+}
+/*Roll-over: Cambiar el color del icono o texto con enlace cuando se pasa por encima*/
+header .top .menu a:hover,header .top .socialMedia a:hover {
+    color: rgb(121, 7, 121);
+}
+/*Banner: formato. Color fondo, transparencia y márgenes*/
+header .bottom .banner {
+    background-color: rgb(192, 189, 189);
+    margin: 150px 50px 0 50px;
+    padding-top: 1em;
+    padding-bottom: 3em;
+    opacity: 0.5;
+    width: 100%;  
+}
+/*Banner-texto: formato. Color, tipo de letra, formato de letra y alineación del texto*/
+header .bottom .banner h2 {
+    width: 100%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    color: rgb(255, 102, 0);
+    font-weight: lighter;
+}
+/*Section. Compuesto por dos partes: left (con artículos) y right (con otro tipo de texto)*/
+/*Alinear las dos partes en fila*/
+section {
+    display: flex;
+}
+/*Establecer el espacio que ocupará el espacio que contendrá los artículos y 
+hacer que los artículos se vayan colocando en la parte inferior cuando sobrepasen su medida y queden centrados*/
+section .left {
+    width: 75%;
+    background-color: rgb(221, 217, 217);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.6em;
+    gap: 1em;
+}
+/*Artículos. Asignar medidas, dar formato y poner sus componentes en columnas*/
+section .left .article {
+    width: 48%;
+    border: solid 0.5em rgb(245, 244, 244);
+    background-color: rgb(245, 244, 244);
+    display: flex;
+    flex-direction: column;
+}
+/*Container de las imagenes de los artículos. 
+Para poder posicionar el texto sobre la imagen tomando de base la posición de la imagen*/
+section .left .article .image {
+    position: relative;
+}
+/*Marcar unas medidas para la imagen y hacer que se recorte si no cabe entera en el espacio asignado*/
+section .left .article img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+/*Fecha que irá sobre la imagen. Formato y posición*/
+section .left .article .image .bottom-left {
+    position: absolute;
+    bottom: 0.5em;
+    left: 0.3em;
+    color: rgb(247, 211, 12);
+}
+/*Título de los artículos. Formato*/
+section .left .article .title {
+    background-color: rgba(252, 138, 138, 0.897);
+}
+section .left .article .title h2 {
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2em;
+    font-weight:initial;
+    margin: 0.5em 0 0.2em 0.2em;
+}
+/*Texto de los artículos. Columnas y formato.*/
+section .article .text {
+    column-count: 2;
+    margin: 0.5em 0 0.5em 0;
+}
+/*Enlace "Leer más..." Formato*/
+section .article .readMore a {
+    color: grey;
+    text-decoration: initial;
+}
+/*Roll-over enlace "Leer más..."*/
+section .article .readMore a:hover{
+    color: rgb(121, 7, 121);
+}
+/*Texto en la parte inferior después de los artículos*/ 
+section .left .other {
+    width: 100%;
+    text-align:center;
+}
+/*Apartado a la derecha con otro texto
+Espacio que ocupará en la pantalla, margenes y color de fondo*/
+section .right {
+    width: 25%;
+    margin-left: 0.5em;
+    background-color: rgb(221, 217, 217);
+    padding: 1em;
+}
+/*Contenido de la sección derecha. Formato*/ 
+section .right .title, section .right .advert  {
+    margin-top: 1em;
+    text-align: center;
+}
+section .right .title {
+    font-weight: bold;
+}
+
+/*Pie de página*/
+footer {
+    background-color: rgb(221, 217, 217);
+}
+footer .text {
+    background-color: rgb(245, 244, 244);
+    margin: 0.5em;
+    text-align: center;
+}
+
+/*TABLET VERSION*/
+@media only screen and (max-width: 1000px) {
+    /*Cabecera. Reajuste de medidas, tamaños de letra y márgenes*/
+    header{
+        background-size: 100% 100%;
+    }
+    header .top .menu a{
+        font-size: 80%;
+    }
+    header .top .menu .options, header .top .menu .socialMedia{
+        gap: 0.2em;
+    }
+    header .bottom .banner {
+        margin:auto; 
+        padding: 0;
+    }
+    header .bottom .banner h2 {
+        font-size:larger;
+    }
+    /*Parte central. Las partes izquierda y derecha pasan a estar dispuestas en columna y reajuste de tamaños de letra*/
+    section {
+        flex-direction: column;
+    }
+    section .left, section .right {
+        width: 100%;
+    }
+    section .left .article .text, 
+    section .left .other, 
+    section .right .title, 
+    section .right .advert {
+        font-size: 80%;
+    }
+    section .right {
+        margin: 0.5em 0 0 0;
+    }
+    footer {
+        font-size: 80%;
+    }
+}
+ /*MOBILE VERSION*/
+@media only screen and (max-width: 600px) {
+    header .top {
+        flex-direction: column;
+        align-items: center;
+    }
+    header .top .logo img{
+        width: 3em;
+        margin-left: 1em;
+    } 
+    header .top .menu{
+        width: 100%;
+        margin-bottom: 1.5em;
+    }
+    /*Para que el texto del baner ocupe solo una línea*/
+    header .bottom .banner h2 {
+        font-size: 100%;
+    }
+    section .left .article {
+        width: 100%;
+    }
+    section .left .article img {
+        width: 100%;
+        height: 125px;
+        object-fit: cover;
+    }
+    section .left .article .title h2 {
+        font-size: 80%;
+    }
+    section .right{
+        padding: 0 0 1em 0;
+    }   
+}

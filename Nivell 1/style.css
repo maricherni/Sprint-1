@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+}
+html, body {
+    max-width: 1200px;
+}
+/*Header separado en dos partes: logo, menú y redes en la superior y banner en la inferior*/
+header {
+    margin-bottom: 0.5em;
+    border: solid 0.7em black;
+    display: flex;
+    flex-direction: column;
+}
+header .top, header .bottom {
+    display: flex;
+    padding: 0.6em;
+    /*para crear espacios entre los items que contiene y no hace falta añadir margen dentro de los elementos*/
+    gap: 0.6em; 
+    /*en el caso de que se cambien las medidas del contenido del logo, menú o redes quedaría centrado a lo ancho*/
+    justify-content: center;
+    /*en el caso que se incrementara la altura de la parteSuperior o la parteInferior, quedaría centrado a lo alto*/
+    align-items: center;   
+}
+header .top {
+    background-color: rgba(26, 26, 49, 0.842);
+}
+header .top .logo, header .top .menu, header .top .socialMedia {
+    background-color: rgb(255, 64, 64);
+    height: 0.7em;
+}
+header .top .logo {
+    flex-grow: 1;
+}
+header .top .menu {
+    flex-grow: 4;
+}
+header .top .socialMedia {
+    flex-grow: 1;
+}
+header .bottom {
+    background-color: rgb(255, 136, 0);
+    border-top: solid 0.3em black;
+}
+header .bottom .banner {
+    background-color: rgb(255, 217, 0);
+    height: 0.7em;
+    width: 100%;
+}
+section {
+    border: solid 0.7em black;
+    display: flex;
+    margin-bottom: 0.5em;
+}
+section .left {
+    background-color: rgb(90, 89, 89);
+    flex-grow: 2;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.6em;
+    gap: 0.5em;
+    justify-content: center;
+}
+section .left .article {
+    background-color: rgb(15, 93, 182);
+    height: 0.7em;
+    width: 49%;
+    
+}
+section .left .other {
+    background-color: rgb(95, 153, 192);
+    height: 0.7em;
+    width: 99%;
+}
+section .right {
+    background-color: rgb(241, 55, 55);
+    border-left: solid 0.5em black;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0.7em;
+    gap: 0.3em;
+}
+section .right .advert {
+    background-color: rgb(248, 234, 106);
+    width: 100%;
+    height: 0.7em;
+}
+footer {
+    display: block;
+    height: 2em;
+    border: solid 0.7em black;
+    background-color: rgb(255, 196, 0);
+}
+.image{
+    width: 100%;
+}
+
+/*Tablet version*/
+@media only screen and (max-width: 1000px) {
+    section {
+        border-color: yellow;
+        flex-direction: column;
+    }
+    section .right {
+        border-top: solid 0.7em yellow;
+        border-left: none;
+    }
+}
+/*Mobile version*/
+@media only screen and (max-width: 480px) {
+    header .top {
+        flex-direction: column;
+    }
+    header .top .logo, header .top .menu, header .top .socialMedia {
+        width: 100%;
+    }
+    header .bottom {
+        border-top: solid 0.7em black;
+    }
+    section {
+       border-color: rgb(255, 217, 0);;
+   }
+    section .left{
+        background-color: rgb(10, 73, 92);
+        gap: 0.7em;
+        padding: 0.7em;
+    }
+    section .left .article, section .left .other {
+        width: 100%;
+     }
+     section .left .article {
+        background-color: rgb(89, 155, 146);  
+     }
+     section .left .other {
+        background-color: rgb(213, 255, 255);
+     }
+     section .right {
+        background-color: salmon;
+        border-color: rgb(255, 217, 0);
+    } 
+    section .right .advert{
+        background-color: rgb(250, 186, 114);
+    }
+    footer {
+        color: rgb(241, 198, 141);
+    }
+}
